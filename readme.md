@@ -15,7 +15,7 @@ Install singularity on the host machine through either:
 1. Clone the container definition repo: ```git clone``` 
 2. Navigate to the directory containing the container definition
 3. Build the image : ```sudo apptainer build organism_query.sif metag_v1.def```
-_You may need to increase your shell's ulimit cap if building fails_: ```ulimit -n 20000```
+    -_You may need to increase your shell's ulimit cap if building fails_: ```ulimit -n 20000```
 
 ## Running apptainer images
 After execution, the luncher GUI should appear. Refer to the WEBPAGE for documentation on how to run.
