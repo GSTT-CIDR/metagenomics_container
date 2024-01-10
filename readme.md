@@ -1,4 +1,4 @@
-# Metagenomics service singularity/apptainer setup and execution
+# Metagenomics singularity/apptainer setup and execution
 A guide for running CIDR metagenomics from singularity/apptainer images. The tools here can be cloned and built independent of containers from their GitHub repos, [organism_query](https://github.com/GSTT-CIDR/organism_query)_and [CIDR_metagenomics (not up yet)](https://github.com/).
 
 ## Rationale
