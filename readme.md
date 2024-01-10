@@ -15,10 +15,9 @@ Install singularity on the host machine through either:
 1. Clone the container definition repo: ```git clone``` 
 2. Navigate to the directory containing the container definition
 3. Build the 
-```
-git clone 
-sudo apptainer build organism_query metag_v1.def
-```
+
+```git clone 
+sudo apptainer build organism_query metag_v1.def```
 
 ## Running apptainer images
 2. Setting limit for container to run
