@@ -1,0 +1,30 @@
+Bootstrap: docker
+From: ubuntu:20.04
+
+%post
+    
+    # Installing base programs
+    export DEBIAN_FRONTEND=noninteractive
+    export DEBCONF_NONINTERACTIVE_SEEN=true 
+    apt-get update && apt-get install -y wget bzip2 ca-certificates git squashfuse fuse2fs gocryptfs x11-xserver-utils libtiff5 tzdata firefox
+
+    # Clone the organism_query repository
+    git clone https://github.com/dan-ward-bio/organism_query.git
+    
+    # Download and install Miniconda
+    wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
+    bash Miniforge3-Linux-x86_64.sh -b -p /opt/conda
+    rm Miniforge3-Linux-x86_64.sh
+    
+    # Initialize mamba and install dependencies    
+    /bin/bash -c '/opt/conda/bin/conda init && source /opt/conda/etc/profile.d/conda.sh && mamba create --name organism_query --file /organism_query/conda/organism_query.txt'
+
+
+%environment
+    /bin/bash -c 'source /opt/conda/etc/profile.d/conda.sh'
+
+%runscript
+    cd /organism_query/
+    /bin/bash -c 'source /opt/conda/etc/profile.d/conda.sh && conda activate organism_query && python launcher.py'
+    
+    
