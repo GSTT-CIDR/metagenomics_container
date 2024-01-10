@@ -2,7 +2,7 @@
 A guide for running CIDR metagenomics from singularity/apptainer images. The tools here can be cloned and built independent of containers from their GitHub repos, [organism_query](https://github.com/GSTT-CIDR/organism_query)_and [CIDR_metagenomics (not up yet)](https://github.com/).
 
 ## Rationale
-Using Singularity/Aptainer for the distribution of CIDR metagenomics software across the NHS metagenomics NoE enables standardised and repeatable use of the informatics workflows across trial sites. It reduces intrusion on partner's hardware and, hands-on set up time and support and streamlines updates. The container operates locally and without root privilege, **so no data will leave the sequencing device.**
+Using Singularity/Aptainer for the distribution of CIDR metagenomics software across the NHS metagenomics NoE enables standardised and repeatable use of the informatics workflows across trial sites. It reduces intrusion on partner's hardware, hands-on set up time/support and streamlines updating. The container operates locally and without root privilege, **so no data will leave the sequencing device.**
 
 ## Apptainer installation
 Install singularity on the host machine through either:
@@ -18,8 +18,6 @@ Install singularity on the host machine through either:
 ```
 git clone 
 sudo apptainer build organism_query metag_v1.def
-
-
 ```
 
 ## Running apptainer images
