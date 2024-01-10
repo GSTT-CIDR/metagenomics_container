@@ -18,4 +18,6 @@ Install singularity on the host machine through either:
      - _You may need to increase your shell's ulimit cap if building fails_: ```ulimit -n 20000```
 ## Running apptainer images
 After execution, the luncher GUI should appear. Refer to the WEBPAGE for documentation on how to run.
-```apptainer run --bind /tmp/.X11-unix:/tmp/.X11-unix --bind /:/mnt --env DISPLAY=$DISPLAY organism_query.sif ```
+```
+apptainer run --bind /tmp/.X11-unix:/tmp/.X11-unix --bind /:/mnt --env DISPLAY=$DISPLAY organism_query.sif 
+```
