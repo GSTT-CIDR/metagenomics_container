@@ -11,13 +11,17 @@ Install singularity on the host machine through either:
 3. From source: [Apptainer guide](https://apptainer.org/docs/admin/main/installation.html)
 
 ## Building apptainer image from definition
-**If you have already received the _.sif_ image, procede to the next step _Running apptainer images_.** 
+**If you have already received the _.sif_ image, proceed to the next step _Running apptainer images_.** 
 1. Clone the container definition repo: ```git clone``` 
 2. Navigate to the directory containing the container definition
-3. Build the image : ```sudo apptainer build organism_query.sif metag_v1.def```
+3. Build the image : ```sudo apptainer build --bind /:/mnt organism_query.sif metag_v1.def```
+3. Build the image : ```sudo apptainer build --bind /:/mnt cidr_metagenomics.sif cidr_metagenomics.def```
      - _You may need to increase your shell's ulimit cap if building fails_: ```ulimit -n 20000```
 ## Running apptainer images
 After execution, the luncher GUI should appear. Refer to the WEBPAGE for documentation on how to run.
 ```
 apptainer run --bind /tmp/.X11-unix:/tmp/.X11-unix --bind /:/mnt --env DISPLAY=$DISPLAY organism_query.sif 
 ```
+
+##For the metagenomics
+apptainer run --bind /tmp/.X11-unix:/tmp/.X11-unix --bind ../:/mnt --bind /data:/data --env DISPLAY=$DISPLAY cidr_metagenomics.sif

@@ -1,1 +1,8 @@
 organism_query.sif
+centrifuge/
+cidr_metagenomics.sif
+reports/
+results/
+.snakemake/
+ref/
+sample_sheets/
