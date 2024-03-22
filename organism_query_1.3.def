@@ -19,6 +19,9 @@ From: ubuntu:20.04
     # Initialize mamba and install dependencies    
     /bin/bash -c '/opt/conda/bin/conda init && source /opt/conda/etc/profile.d/conda.sh && mamba create --name organism_query --file /organism_query/conda/organism_query.txt'
 
+    # Download the NCBI taxdump
+    /bin/bash -c 'cd / ; wget ftp://ftp.ncbi.nih.gov/pub/taxonomy/taxdump.tar.gz; tar -zxvf taxdump.tar.gz; mkdir -p taxonkit; mv names.dmp nodes.dmp delnodes.dmp merged.dmp taxonkit; rm *.dmp'
+
 
 %environment
     /bin/bash -c 'source /opt/conda/etc/profile.d/conda.sh'

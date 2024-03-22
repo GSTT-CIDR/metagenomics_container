@@ -6,3 +6,9 @@ results/
 .snakemake/
 ref/
 sample_sheets/
+update/update.sh
+update/rebuild.sh
+organism_query_v1.1.sif
+organism_query_v1.2.sif
+organism_query_v1.3.sif
+.gitignore
